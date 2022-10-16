@@ -2,19 +2,20 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
-Console.Write ("Введите целое число:");
-int Num = Convert.ToInt32 (Console.ReadLine());
-if (Num / 100 !=0)
+
+Console.Write ("Введите целое число: ");
+int num = Convert.ToInt32 (Console.ReadLine());
+string thirdnum (int n)
 {
-    int x = Num;
-    while ((x / 1000) != 0)
+    if (n < 100)
+        return "Третьей цифры нет";
+    else
     {
-        x = x / 10;
+        int third = n;
+        while (third > 999)
+        third = third / 10;
+        third = third % 10;
+        return $"Третья цифра числа {n} -> {third}";
     }
-    int res = x % 10;
-    Console.Write ($"третья цифра числа:{res}");
 }
-else
-{
-    Console.Write ("третьей цифры нет");
-}
+Console.Write (thirdnum(num));
