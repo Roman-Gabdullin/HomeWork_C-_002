@@ -3,20 +3,16 @@
 // 7 -> да
 // 1 -> нет
 
-Console.Write ("Введите номер дня недели по порядку от 1 до7:");
+Console.Write ("Введите номер дня недели по порядку от 1 до 7: ");
 int day = Convert.ToInt32(Console.ReadLine());
-if (day < 1 | day > 7) 
+string dayoff (int d)
 {
-    Console.Write ("Ошибка ввода");
-}
-else
-{
-    if (day >= 6)
-    {
-        Console.Write ("да");
-    }
+    if (d < 1 | d > 7) 
+    return "Ошибка ввода";
     else
-    {
-        Console.Write ("нет");
-    }
+    if (d>= 6)
+    return $"{d} день недели является выходным";
+    else
+    return $"{d} день недели не является выходным";
 }
+Console.Write(dayoff(day));
